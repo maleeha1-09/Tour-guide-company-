@@ -87,7 +87,7 @@ while True:
     print("6.Book your tour") 
     print("7.book a course")
     print("8.Your information") 
-    i=int(input("Press from 1 to 7 to get required information : "))
+    i=int(input("Press from 1 to 8 to get required information : "))
     if i == 1:
         company = TourCompany("PK Guides & Tours","Multan","03000000000")
         company.display()
@@ -109,13 +109,14 @@ while True:
     elif i == 5:
         ride = Ride("Rickshaw Ride",1000)
         ride.display()
-        ride = Ride("Car ride",1000)
+        ride2= Ride("Car ride",1000)
         ride2.display()
     elif i == 6:
         name = input("Enter your name: ")
         email = input("Enter your email: ")
-        phone = input("Enter your phone number: ")
-        customer = Customer(name, email, phone)
+        phone = input("Enter your phone number")
+        bookedtour = input("Enter tour you want to book : ")
+        customer = Customer(name, email, phone,bookedtour)
         tour = Tour("Multan City Tour","Visit the historical and cultural sites of Multan",3000,"1 day","Ali Khan")
         ride = Ride("Rickshaw Ride",1000)
         date = input("Enter your preferred date for the tour (DD/MM/YYYY): ")
@@ -126,9 +127,10 @@ while True:
         name = input("Enter your name: ")
         email = input("Enter your email: ")
         phone = input("Enter your phone number: ")
-        customer = Customer(name, email, phone)
+        bookedtour=input("Enter course you want to get enrolled in :  ")
+        customer = Customer(name, email, phone,bookedtour)
         course = MonthlyCourses("Tour guiding","Learn to guide tours ",10000,"2 week")
-        date = input("Enter your preferred date for the course (DD/MM/YYYY): ")
+        date = input("Enter your preferred date for the course (DD/MM/YYYY): ") 
         booking = BookingCourses(customer.name, course, date)
         print("Your booking has been confirmed!")
         booking.display()  
@@ -139,6 +141,6 @@ while True:
     else:
         print("Invalid input. Please enter a valid option.")
         continue
-    endloop = input("Do you want to continue? (yes/no): ")
-    if endloop.lower() != "yes":
+    choice = input("Do you want to continue? (yes/no): ")
+    if choice.lower() != "yes":
         break
