@@ -135,8 +135,10 @@ while True:
         print("Your booking has been confirmed!")
         booking.display()  
     elif i == 8:
+        name = input("Enter your name : ")
+        email = input("Enter your email : ")
         print("Your tour information : ")
-        customer1=Customer("ALISHBA","alishba@gmail.com","0909909","Sakardu tour") 
+        customer1=Customer(name,email,"0909909","Sakardu tour") 
         customer1.display()
     else:
         print("Invalid input. Please enter a valid option.")
